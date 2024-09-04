@@ -51,7 +51,7 @@ describe('Login test', () => {
         })
     });
 
-
+    
     it('Should be able to signup fail with empty username', () => {
         
         headerCmp.signUpLink().click()
