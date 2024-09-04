@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-04T04:44:34.761Z",
+    "end": "2024-09-04T04:44:41.219Z",
+    "duration": 6458,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "52fddaf3-704f-4508-be8e-cb5eace8a66b",
+      "title": "",
+      "fullFile": "cypress\\tests\\DemoBlazeTest\\LoginTest.js",
+      "file": "cypress\\tests\\DemoBlazeTest\\LoginTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+          "title": "Login test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be able to login with correct credential",
+              "fullTitle": "Login test Should be able to login with correct credential",
+              "timedOut": null,
+              "duration": 4766,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\nheaderCmp.getLoggedUsername().should('be.visible');\nheaderCmp.getLoggedUsername().should('contain.text', `Welcome ${LOGIN_ACCOUNT.username}`);",
+              "err": {},
+              "uuid": "de28cd13-c5c1-462b-ade3-cbe9ec869fb4",
+              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should be able to login fail with incorrect username",
+              "fullTitle": "Login test Should be able to login fail with incorrect username",
+              "timedOut": null,
+              "duration": 691,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username + '_WRONG', {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('User does not exist.');\n});",
+              "err": {},
+              "uuid": "7195b87b-9116-45d4-b5c6-ef8527b70e7f",
+              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should be able to login fail with incorrect password",
+              "fullTitle": "Login test Should be able to login fail with incorrect password",
+              "timedOut": null,
+              "duration": 892,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password + '_WRONG', {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Wrong password.');\n});",
+              "err": {},
+              "uuid": "0d1cae5e-6781-4aed-b1d0-d118dd4bb496",
+              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "de28cd13-c5c1-462b-ade3-cbe9ec869fb4",
+            "7195b87b-9116-45d4-b5c6-ef8527b70e7f",
+            "0d1cae5e-6781-4aed-b1d0-d118dd4bb496"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6349,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

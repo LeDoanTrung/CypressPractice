@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-04T04:43:58.667Z",
+    "end": "2024-09-04T04:44:08.269Z",
+    "duration": 9602,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9571eadc-c378-42c3-87b2-ea771e81be94",
+      "title": "",
+      "fullFile": "cypress\\tests\\DemoBlazeTest\\CategoryTest.js",
+      "file": "cypress\\tests\\DemoBlazeTest\\CategoryTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+          "title": "Homepage Category Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test phone Category",
+              "fullTitle": "Homepage Category Test Test phone Category",
+              "timedOut": null,
+              "duration": 4778,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "verifyCategoryFilterBy(productName);",
+              "err": {},
+              "uuid": "bd3ce425-c117-4217-a6ef-c725b3b4232c",
+              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test notebook Category",
+              "fullTitle": "Homepage Category Test Test notebook Category",
+              "timedOut": null,
+              "duration": 2183,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "verifyCategoryFilterBy(productName);",
+              "err": {},
+              "uuid": "8420dd5b-eef1-4a20-982d-fd4b14030da1",
+              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test monitor Category",
+              "fullTitle": "Homepage Category Test Test monitor Category",
+              "timedOut": null,
+              "duration": 2020,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "verifyCategoryFilterBy(productName);",
+              "err": {},
+              "uuid": "dfdb5218-8a15-4a77-b988-12b4e3ec76fa",
+              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd3ce425-c117-4217-a6ef-c725b3b4232c",
+            "8420dd5b-eef1-4a20-982d-fd4b14030da1",
+            "dfdb5218-8a15-4a77-b988-12b4e3ec76fa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8981,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
