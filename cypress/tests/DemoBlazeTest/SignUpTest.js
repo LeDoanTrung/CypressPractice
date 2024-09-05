@@ -63,6 +63,4 @@ describe('Login test', () => {
         })
     });
 
-    //test
-    
 });

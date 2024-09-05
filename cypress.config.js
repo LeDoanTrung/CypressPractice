@@ -10,5 +10,11 @@ module.exports = defineConfig({
     baseUrl: "https://www.demoblaze.com/"
   },
   reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: false,
+    json: true
+  },
   defaultCommandTimeout: 10000
 });

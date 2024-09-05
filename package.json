@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "cypress open",
     "test": "cypress run --browser chrome --headed",
-    "test:mocha-reporter": "cypress run --reporter mochawesome --reporter-options reportDir=\"results\",overwrite=false,html=false,json=true",
-    "merge-reports": "mochawesome-merge \"cypress/results/*.json\" > mochawesome.json",
+    "test:mocha-reporter": "cypress run --reporter mochawesome --reporter-options reportDir=results,overwrite=false,html=false,json=true",
+    "merge-reports": "mochawesome-merge \"results/*.json\" > mochawesome.json",
     "build-report": "marge mochawesome.json",
     "open-report": "serve mochawesome-report"
   },
@@ -14,14 +14,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cypress": "^13.13.3",
     "cypress-xpath": "^2.0.1"
   },
   "devDependencies": {
+    "cypress": "^13.14.2",
+    "marge": "1.0.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0",
-    "marge" :"1.0.1",
-    "serve" : "14.1.2"
+    "serve": "14.1.2"
   }
 }

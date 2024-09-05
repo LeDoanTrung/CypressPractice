@@ -2,23 +2,23 @@
   "stats": {
     "suites": 7,
     "tests": 15,
-    "passes": 13,
+    "passes": 12,
     "pending": 0,
-    "failures": 2,
+    "failures": 3,
     "testsRegistered": 15,
-    "passPercent": 86.66666666666667,
+    "passPercent": 80,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2024-09-04T04:43:58.667Z",
-    "end": "2024-09-04T04:44:54.092Z",
-    "duration": 55425
+    "start": "2024-09-05T07:25:57.589Z",
+    "end": "2024-09-05T07:27:24.691Z",
+    "duration": 87102
   },
   "results": [
     {
-      "uuid": "45512848-896e-43ec-b245-37d56d63b519",
+      "uuid": "0c9b0232-26f3-4f16-bf3f-3c6afcaa243e",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\End2End_OrderProduct.js",
       "file": "cypress\\tests\\DemoBlazeTest\\End2End_OrderProduct.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f6d79dfd-521e-4b2e-b1bf-5553fb235286",
+          "uuid": "16974205-e0c0-4f65-bc82-bd7506cf0110",
           "title": "Order product test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Order item as guest",
               "fullTitle": "Order product test Order item as guest",
               "timedOut": null,
-              "duration": 6603,
+              "duration": 18281,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "purchaseItem();",
               "err": {
-                "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
-                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76022:18)\n    at Object.errByPath (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76076:10)\n    at checkForXhr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135659:84)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135685:28)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144061:68)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144002:14)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at HomePageAPI.waitForEntriesRequest (webpack://cypress_project/./cypress/support/HomePageAPI.js:15:11)\n    at HomePageAPI.waitForHomePageLoad (webpack://cypress_project/./cypress/support/HomePageAPI.js:10:13)\n    at HomePageAPI.getHomePageProducts (webpack://cypress_project/./cypress/support/HomePageAPI.js:3:13)\n    at purchaseItem (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:28:16)\n    at Context.eval (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:16:8)",
-                "diff": null
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<p.lead.text-muted.>' to contain text '790', but the text was 'Id: 8510279Amount: 0 USDCard Number: 123123Name: tunDate: 5/8/2024'",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<p.lead.text-muted.>' to contain text '790', but the text was 'Id: 8510279Amount: 0 USDCard Number: 123123Name: tunDate: 5/8/2024'\n    at Context.eval (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:59:27)",
+                "diff": "- 'Id: 8510279Amount: 0 USDCard Number: 123123Name: tunDate: 5/8/2024'\n+ '790'\n"
               },
-              "uuid": "3bc5ef05-9d89-4763-98a8-33b802853c3b",
-              "parentUUID": "f6d79dfd-521e-4b2e-b1bf-5553fb235286",
+              "uuid": "50121ecf-e888-4e8b-af61-7c51a68a0129",
+              "parentUUID": "16974205-e0c0-4f65-bc82-bd7506cf0110",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Order item as logged user",
               "fullTitle": "Order product test Order item as logged user",
               "timedOut": null,
-              "duration": 6870,
+              "duration": 8146,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -70,11 +70,11 @@
               "code": "//Login\ncy.login(LOGIN_ACCOUNT.username, LOGIN_ACCOUNT.password);\npurchaseItem();",
               "err": {
                 "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
-                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76022:18)\n    at Object.errByPath (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76076:10)\n    at checkForXhr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135659:84)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135685:28)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144061:68)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144002:14)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at HomePageAPI.waitForEntriesRequest (webpack://cypress_project/./cypress/support/HomePageAPI.js:15:11)\n    at HomePageAPI.waitForHomePageLoad (webpack://cypress_project/./cypress/support/HomePageAPI.js:10:13)\n    at HomePageAPI.getHomePageProducts (webpack://cypress_project/./cypress/support/HomePageAPI.js:3:13)\n    at purchaseItem (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:28:16)\n    at Context.eval (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:22:8)",
+                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76025:18)\n    at Object.errByPath (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76079:10)\n    at checkForXhr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135700:84)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135726:28)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144102:68)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144043:14)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at HomePageAPI.waitForEntriesRequest (webpack://cypress_project/./cypress/support/HomePageAPI.js:15:11)\n    at HomePageAPI.waitForHomePageLoad (webpack://cypress_project/./cypress/support/HomePageAPI.js:10:13)\n    at HomePageAPI.getHomePageProducts (webpack://cypress_project/./cypress/support/HomePageAPI.js:3:13)\n    at purchaseItem (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:28:16)\n    at Context.eval (webpack://cypress_project/./cypress/tests/DemoBlazeTest/End2End_OrderProduct.js:22:8)",
                 "diff": null
               },
-              "uuid": "4b1ead77-99b7-42c0-a223-8a8c12e7af9a",
-              "parentUUID": "f6d79dfd-521e-4b2e-b1bf-5553fb235286",
+              "uuid": "f6e46d38-1392-4ab3-87c2-cd99210a877b",
+              "parentUUID": "16974205-e0c0-4f65-bc82-bd7506cf0110",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "3bc5ef05-9d89-4763-98a8-33b802853c3b",
-            "4b1ead77-99b7-42c0-a223-8a8c12e7af9a"
+            "50121ecf-e888-4e8b-af61-7c51a68a0129",
+            "f6e46d38-1392-4ab3-87c2-cd99210a877b"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 13473,
+          "duration": 26427,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -103,7 +103,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "5f8411f3-3fe5-4ccd-a09d-d7f3cabe3adf",
+      "uuid": "b2b1fc90-bb55-4b78-a06d-54dd28f88c4d",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\FooterTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\FooterTest.js",
@@ -112,7 +112,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "94e66335-6459-4f49-aafe-beec649b4753",
+          "uuid": "fbc39d94-aeda-4832-bb6f-9114673e12bc",
           "title": "Footer Component test",
           "fullFile": "",
           "file": "",
@@ -123,7 +123,7 @@
               "title": "Test for Contact Us footer",
               "fullTitle": "Footer Component test Test for Contact Us footer",
               "timedOut": null,
-              "duration": 1343,
+              "duration": 1428,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -132,20 +132,20 @@
               "context": null,
               "code": "footerComp.getContactUsData().then($actualData => {\n  cy.log('Contact Us Data:', $actualData);\n  // cy.wrap('').then(()=> {\n  //     expect($actualData).to.equal(expectedResult)\n  // });\n});",
               "err": {},
-              "uuid": "c67403f2-7fbf-454b-bd2a-814cd6e0cc3f",
-              "parentUUID": "94e66335-6459-4f49-aafe-beec649b4753",
+              "uuid": "2770e90f-4147-4476-a153-88f1fd7b6d10",
+              "parentUUID": "fbc39d94-aeda-4832-bb6f-9114673e12bc",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c67403f2-7fbf-454b-bd2a-814cd6e0cc3f"
+            "2770e90f-4147-4476-a153-88f1fd7b6d10"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1343,
+          "duration": 1428,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -161,7 +161,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "407dffdf-5d61-4118-96e2-3be0177f366a",
+      "uuid": "88233364-6c46-490e-831f-092ec3759d97",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\HeaderTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\HeaderTest.js",
@@ -170,7 +170,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d174cbbe-47fa-43f6-81a5-4f02d97fe438",
+          "uuid": "2a6e6de1-fb61-4ffd-b26f-c76d2d3fc908",
           "title": "Header Component test",
           "fullFile": "",
           "file": "",
@@ -181,7 +181,7 @@
               "title": "Test for brand logo",
               "fullTitle": "Header Component test Test for brand logo",
               "timedOut": null,
-              "duration": 1314,
+              "duration": 1258,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -190,8 +190,8 @@
               "context": null,
               "code": "header.brandLogo().should('be.visible');\nheader.brandLogo().should('contain.text', BRAND_TEXT);",
               "err": {},
-              "uuid": "7a96a2c4-4b52-4a37-b058-467333efd887",
-              "parentUUID": "d174cbbe-47fa-43f6-81a5-4f02d97fe438",
+              "uuid": "bb68172d-8648-40fb-8d73-2e5dec9a610b",
+              "parentUUID": "2a6e6de1-fb61-4ffd-b26f-c76d2d3fc908",
               "isHook": false,
               "skipped": false
             },
@@ -199,7 +199,7 @@
               "title": "Test for header menu",
               "fullTitle": "Header Component test Test for header menu",
               "timedOut": null,
-              "duration": 186,
+              "duration": 441,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -208,21 +208,21 @@
               "context": null,
               "code": "// const expectedResult = [{\n//     \"text\":\"Home (current)\",\"href\":\"index.html\"},\n//     {\"text\":\"Contact\",\"href\":\"#\"},\n//     {\"text\":\"About us\",\"href\":\"#\"},\n//     {\"text\":\"Cart\",\"href\":\"cart.html\"},\n//     {\"text\":\"Log in\",\"href\":\"#\"},\n//     {\"text\":\"Sign up\",\"href\":\"#\"}]\nheader.getMenuDetail().then($actualResult => {\n  cy.wrap('').then(() => {\n    expect($actualResult).to.be.deep.equal(_nav_bar.default);\n  });\n});",
               "err": {},
-              "uuid": "c00fa48c-0b86-4dac-8fd9-a9fe0a0994bc",
-              "parentUUID": "d174cbbe-47fa-43f6-81a5-4f02d97fe438",
+              "uuid": "65896ae7-466b-4ced-a412-1604fac431bc",
+              "parentUUID": "2a6e6de1-fb61-4ffd-b26f-c76d2d3fc908",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7a96a2c4-4b52-4a37-b058-467333efd887",
-            "c00fa48c-0b86-4dac-8fd9-a9fe0a0994bc"
+            "bb68172d-8648-40fb-8d73-2e5dec9a610b",
+            "65896ae7-466b-4ced-a412-1604fac431bc"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1500,
+          "duration": 1699,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -238,7 +238,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "52fddaf3-704f-4508-be8e-cb5eace8a66b",
+      "uuid": "db1b767d-6db5-40ac-8084-152cabd29b4e",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\LoginTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\LoginTest.js",
@@ -247,7 +247,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+          "uuid": "cc1051a9-003b-48ed-8d8e-85fce287a4be",
           "title": "Login test",
           "fullFile": "",
           "file": "",
@@ -258,7 +258,7 @@
               "title": "Should be able to login with correct credential",
               "fullTitle": "Login test Should be able to login with correct credential",
               "timedOut": null,
-              "duration": 4766,
+              "duration": 4675,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -267,8 +267,8 @@
               "context": null,
               "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\nheaderCmp.getLoggedUsername().should('be.visible');\nheaderCmp.getLoggedUsername().should('contain.text', `Welcome ${LOGIN_ACCOUNT.username}`);",
               "err": {},
-              "uuid": "de28cd13-c5c1-462b-ade3-cbe9ec869fb4",
-              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "uuid": "7d34c139-3bfd-403c-b17f-f564a4f0d379",
+              "parentUUID": "cc1051a9-003b-48ed-8d8e-85fce287a4be",
               "isHook": false,
               "skipped": false
             },
@@ -276,7 +276,7 @@
               "title": "Should be able to login fail with incorrect username",
               "fullTitle": "Login test Should be able to login fail with incorrect username",
               "timedOut": null,
-              "duration": 691,
+              "duration": 759,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -285,8 +285,8 @@
               "context": null,
               "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username + '_WRONG', {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('User does not exist.');\n});",
               "err": {},
-              "uuid": "7195b87b-9116-45d4-b5c6-ef8527b70e7f",
-              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "uuid": "ca2151d6-7ad8-4461-b527-44cd82f16cb7",
+              "parentUUID": "cc1051a9-003b-48ed-8d8e-85fce287a4be",
               "isHook": false,
               "skipped": false
             },
@@ -294,7 +294,7 @@
               "title": "Should be able to login fail with incorrect password",
               "fullTitle": "Login test Should be able to login fail with incorrect password",
               "timedOut": null,
-              "duration": 892,
+              "duration": 1079,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -303,22 +303,22 @@
               "context": null,
               "code": "headerCmp.loginLink().click();\nloginCmp.getUsername().type(LOGIN_ACCOUNT.username, {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getPassword().type(LOGIN_ACCOUNT.password + '_WRONG', {\n  force: true,\n  waitForAnimation: true\n});\nloginCmp.getLoginBtn().click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Wrong password.');\n});",
               "err": {},
-              "uuid": "0d1cae5e-6781-4aed-b1d0-d118dd4bb496",
-              "parentUUID": "3353564f-925b-4b6d-b703-9de0738f7eb2",
+              "uuid": "0a183f3a-9774-4395-b3ec-24f99111fa4a",
+              "parentUUID": "cc1051a9-003b-48ed-8d8e-85fce287a4be",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "de28cd13-c5c1-462b-ade3-cbe9ec869fb4",
-            "7195b87b-9116-45d4-b5c6-ef8527b70e7f",
-            "0d1cae5e-6781-4aed-b1d0-d118dd4bb496"
+            "7d34c139-3bfd-403c-b17f-f564a4f0d379",
+            "ca2151d6-7ad8-4461-b527-44cd82f16cb7",
+            "0a183f3a-9774-4395-b3ec-24f99111fa4a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6349,
+          "duration": 6513,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -334,7 +334,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "f3595837-4cda-4d7a-9183-79e34d123c06",
+      "uuid": "9615b528-c0a1-4cb9-8f13-f94755b49e0e",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\ProductDetailTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\ProductDetailTest.js",
@@ -343,7 +343,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b3075166-0e9e-423e-a857-dc3b12c8a2a1",
+          "uuid": "350961ca-9a48-42fa-a7cb-4e6f674b8ee2",
           "title": "Product Detail Component test",
           "fullFile": "",
           "file": "",
@@ -354,29 +354,33 @@
               "title": "Should be able to verify product details",
               "fullTitle": "Product Detail Component test Should be able to verify product details",
               "timedOut": null,
-              "duration": 4618,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 7508,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "_HomePageAPI.HomePageAPI.getHomePageProducts().then(hpAPIProducts => {\n  const randomProduct = hpAPIProducts[Math.floor(Math.random() * hpAPIProducts.length)];\n  cy.contains(randomProduct.title.trim().replace(\"\\n\", \"\")).click();\n  const productDetail = new _ProductDetailComponent.default();\n  productDetail.getProductImg().should('be.visible');\n  productDetail.getProductName().should(\"contains.text\", randomProduct.title);\n  productDetail.getProductPrice().should(\"contains.text\", `$${randomProduct.price}`);\n  productDetail.getProductDescription().should(\"not.be.empty\");\n});",
-              "err": {},
-              "uuid": "1993be87-c17a-4eb7-b32b-b66f9a7c70e3",
-              "parentUUID": "b3075166-0e9e-423e-a857-dc3b12c8a2a1",
+              "err": {
+                "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `entries`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76025:18)\n    at Object.errByPath (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:76079:10)\n    at checkForXhr (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135700:84)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:135726:28)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144102:68)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:144043:14)\n    at tryCatcher (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://www.demoblaze.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at HomePageAPI.waitForEntriesRequest (webpack://cypress_project/./cypress/support/HomePageAPI.js:15:11)\n    at HomePageAPI.waitForHomePageLoad (webpack://cypress_project/./cypress/support/HomePageAPI.js:10:13)\n    at HomePageAPI.getHomePageProducts (webpack://cypress_project/./cypress/support/HomePageAPI.js:3:13)\n    at Context.eval (webpack://cypress_project/./cypress/tests/DemoBlazeTest/ProductDetailTest.js:11:20)",
+                "diff": null
+              },
+              "uuid": "0db56206-90f9-4dac-b3d2-5f6c3c578949",
+              "parentUUID": "350961ca-9a48-42fa-a7cb-4e6f674b8ee2",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "1993be87-c17a-4eb7-b32b-b66f9a7c70e3"
+          "passes": [],
+          "failures": [
+            "0db56206-90f9-4dac-b3d2-5f6c3c578949"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4618,
+          "duration": 7508,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -392,7 +396,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "c3519de6-4078-4acb-8ac7-d61c5cede08b",
+      "uuid": "da9c0eaa-42f1-4448-a889-d1fdd77515d9",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\SignUpTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\SignUpTest.js",
@@ -401,7 +405,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c48fab43-2015-4fa0-ad5e-5658ced6d0ec",
+          "uuid": "cb768fcc-8263-4226-8810-df73ffb87c6e",
           "title": "Login test",
           "fullFile": "",
           "file": "",
@@ -412,7 +416,7 @@
               "title": "Should be able to sign up with correct credential",
               "fullTitle": "Login test Should be able to sign up with correct credential",
               "timedOut": null,
-              "duration": 1894,
+              "duration": 2046,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -421,8 +425,8 @@
               "context": null,
               "code": "headerCmp.signUpLink().click();\nsignUpCmp.getUsername().type(SIGNUP_ACCOUNT.username, {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getPassword().type(SIGNUP_ACCOUNT.password, {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getSignUpBtn().click();\ncy.on(\"window:alert\", alert => {\n  expect(alert).to.equal(\"Sign up successful.\");\n});",
               "err": {},
-              "uuid": "f57f7607-6c52-46ae-8e38-2250bce9b05d",
-              "parentUUID": "c48fab43-2015-4fa0-ad5e-5658ced6d0ec",
+              "uuid": "c5d10596-7994-430c-ba21-a1122a465845",
+              "parentUUID": "cb768fcc-8263-4226-8810-df73ffb87c6e",
               "isHook": false,
               "skipped": false
             },
@@ -430,7 +434,7 @@
               "title": "Should be able to sign up fail with exist account",
               "fullTitle": "Login test Should be able to sign up fail with exist account",
               "timedOut": null,
-              "duration": 1437,
+              "duration": 1806,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -439,8 +443,8 @@
               "context": null,
               "code": "headerCmp.signUpLink().click();\nsignUpCmp.getUsername().type('tun', {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getPassword().type('admin', {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getSignUpBtn().click();\ncy.on(\"window:alert\", alert => {\n  expect(alert).to.equal(\"This user already exist.\");\n});",
               "err": {},
-              "uuid": "911ce139-e61f-4216-8f8f-7f7e74d51f9d",
-              "parentUUID": "c48fab43-2015-4fa0-ad5e-5658ced6d0ec",
+              "uuid": "eb3c670d-3f48-4424-8919-33a73ce6e736",
+              "parentUUID": "cb768fcc-8263-4226-8810-df73ffb87c6e",
               "isHook": false,
               "skipped": false
             },
@@ -448,7 +452,7 @@
               "title": "Should be able to signup fail with empty username",
               "fullTitle": "Login test Should be able to signup fail with empty username",
               "timedOut": null,
-              "duration": 604,
+              "duration": 911,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -457,22 +461,22 @@
               "context": null,
               "code": "headerCmp.signUpLink().click();\nsignUpCmp.getUsername().type(' ', {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getPassword().type('admin', {\n  force: true,\n  waitForAnimation: true\n});\nsignUpCmp.getSignUpBtn().click();\ncy.on(\"window:alert\", alert => {\n  expect(alert).to.equal(\"Please fill out Username and Password.\");\n});",
               "err": {},
-              "uuid": "29327204-5c1d-43ec-830b-b55e97aaf253",
-              "parentUUID": "c48fab43-2015-4fa0-ad5e-5658ced6d0ec",
+              "uuid": "700e3aa2-a6f4-4dd3-bee7-e5097c8a4373",
+              "parentUUID": "cb768fcc-8263-4226-8810-df73ffb87c6e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f57f7607-6c52-46ae-8e38-2250bce9b05d",
-            "911ce139-e61f-4216-8f8f-7f7e74d51f9d",
-            "29327204-5c1d-43ec-830b-b55e97aaf253"
+            "c5d10596-7994-430c-ba21-a1122a465845",
+            "eb3c670d-3f48-4424-8919-33a73ce6e736",
+            "700e3aa2-a6f4-4dd3-bee7-e5097c8a4373"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3935,
+          "duration": 4763,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -488,7 +492,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9571eadc-c378-42c3-87b2-ea771e81be94",
+      "uuid": "e8ed6736-1215-480a-801a-393bc86f6633",
       "title": "",
       "fullFile": "cypress\\tests\\DemoBlazeTest\\CategoryTest.js",
       "file": "cypress\\tests\\DemoBlazeTest\\CategoryTest.js",
@@ -497,7 +501,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+          "uuid": "13f4b081-9c9e-4a36-9f0d-97349e891024",
           "title": "Homepage Category Test",
           "fullFile": "",
           "file": "",
@@ -508,17 +512,17 @@
               "title": "Test phone Category",
               "fullTitle": "Homepage Category Test Test phone Category",
               "timedOut": null,
-              "duration": 4778,
+              "duration": 6262,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "verifyCategoryFilterBy(productName);",
               "err": {},
-              "uuid": "bd3ce425-c117-4217-a6ef-c725b3b4232c",
-              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "uuid": "18b113fe-3101-44c7-bd02-21b808fe8f0c",
+              "parentUUID": "13f4b081-9c9e-4a36-9f0d-97349e891024",
               "isHook": false,
               "skipped": false
             },
@@ -526,17 +530,17 @@
               "title": "Test notebook Category",
               "fullTitle": "Homepage Category Test Test notebook Category",
               "timedOut": null,
-              "duration": 2183,
+              "duration": 6147,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "verifyCategoryFilterBy(productName);",
               "err": {},
-              "uuid": "8420dd5b-eef1-4a20-982d-fd4b14030da1",
-              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "uuid": "4c2989a0-4073-42fb-b35d-88b5ee66d4d5",
+              "parentUUID": "13f4b081-9c9e-4a36-9f0d-97349e891024",
               "isHook": false,
               "skipped": false
             },
@@ -544,31 +548,31 @@
               "title": "Test monitor Category",
               "fullTitle": "Homepage Category Test Test monitor Category",
               "timedOut": null,
-              "duration": 2020,
+              "duration": 6796,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "verifyCategoryFilterBy(productName);",
               "err": {},
-              "uuid": "dfdb5218-8a15-4a77-b988-12b4e3ec76fa",
-              "parentUUID": "74f8cfe7-4b40-4de4-99a4-760be6c0a727",
+              "uuid": "03b8fb1f-1b75-4b4b-9e60-63da7d5cbacd",
+              "parentUUID": "13f4b081-9c9e-4a36-9f0d-97349e891024",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "bd3ce425-c117-4217-a6ef-c725b3b4232c",
-            "8420dd5b-eef1-4a20-982d-fd4b14030da1",
-            "dfdb5218-8a15-4a77-b988-12b4e3ec76fa"
+            "18b113fe-3101-44c7-bd02-21b808fe8f0c",
+            "4c2989a0-4073-42fb-b35d-88b5ee66d4d5",
+            "03b8fb1f-1b75-4b4b-9e60-63da7d5cbacd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8981,
+          "duration": 19205,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
