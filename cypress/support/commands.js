@@ -28,6 +28,7 @@
 /**
  * @memberof cy
  * @method login
+ *
  * */
 
 Cypress.Commands.add('login', (username, password)=>{
@@ -46,4 +47,18 @@ Cypress.Commands.add('login', (username, password)=>{
         cy.log(authToken)
         cy.setCookie('tokenp_', authToken)
     })
+})
+
+/**
+ * @memberof cy
+ * @method createPost
+ *
+ * */
+Cypress.Commands.add('createPost', postBody =>{
+    cy.request({
+        method: 'POST',
+        url: Cypress.env('apiURL'),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: postBody
+    });
 })

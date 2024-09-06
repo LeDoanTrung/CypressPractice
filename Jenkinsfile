@@ -1,37 +1,44 @@
 pipeline {
     agent any
 
+    environment {
+        // Đặt biến môi trường nếu cần
+        CYPRESS_API_URL = 'https://jsonplaceholder.typicode.com/posts'
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
-                // Cài đặt các package cần thiết
+                script {
+                    // Cài đặt Node.js và npm
+                    def nodeHome = tool name: 'NodeJS', type: 'NodeJSInstallation'
+                    env.PATH = "${nodeHome}/bin:${env.PATH}"
+                }
+                // Cài đặt các gói npm
                 sh 'npm install'
             }
         }
-        stage('Run Tests') {
+
+        stage('Run Cypress Tests') {
             steps {
-                // Chạy các test với mocha-reporter
-                sh 'npm run test:mocha-reporter'
-            }
-        }
-        stage('Merge Reports') {
-            steps {
-                // Gộp các báo cáo
-                sh 'npm run merge-reports'
-            }
-        }
-        stage('Build Report') {
-            steps {
-                // Xây dựng báo cáo cuối cùng
-                sh 'npm run build-report'
+                // Chạy các bài kiểm tra Cypress
+                sh 'npx run test'
             }
         }
     }
 
     post {
         always {
-            // Luôn lưu báo cáo sau khi hoàn thành
-            archiveArtifacts artifacts: 'mochawesome-report/*.html', allowEmptyArchive: true
+            // Lưu trữ kết quả kiểm tra
+            archiveArtifacts artifacts: 'cypress/screenshots/**/*, cypress/videos/**/*'
+        }
+        success {
+            // Thông báo khi kiểm tra thành công
+            echo 'Tests passed!'
+        }
+        failure {
+            // Thông báo khi kiểm tra thất bại
+            echo 'Tests failed!'
         }
     }
 }
