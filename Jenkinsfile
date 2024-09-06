@@ -22,7 +22,7 @@ pipeline {
         stage('Run Cypress Tests') {
             steps {
                 // Chạy các bài kiểm tra Cypress
-                sh 'npx run test'
+                sh 'npm run test'
             }
         }
     }
