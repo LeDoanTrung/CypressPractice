@@ -24,7 +24,7 @@ pipeline {
                         bat 'npm -v'
                         bat 'echo %PATH%'
                         bat 'echo %NODE_PATH%'
-                        bat 'type cypress.json'
+                        bat 'type cypress.config.js'
                         bat 'type package.json' 
 
                         bat 'npm run test:mocha-reporter'
