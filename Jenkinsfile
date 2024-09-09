@@ -12,7 +12,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm run test'
+                script {
+                    // Enable ANSI color in the console output
+                    ansiColor('xterm') {
+                        bat 'npm run test:mocha-reporter'
+                        bat 'npm run merge-reports'
+                        bat 'npm run generate-report'
+                    }
+                }
+                // Archive the Mochawesome report
+                archiveArtifacts artifacts: 'mochawesome-report/*.html', allowEmptyArchive: true
             }
         }
     }
