@@ -14,10 +14,11 @@ pipeline {
             steps {
                 script {
                     // Enable ANSI color in the console output
-                    ansiColor('xterm') {
+                    ansiColor('xterm-256color') {
+                        bat 'chcp 65001'
                         bat 'npm run test:mocha-reporter'
                         bat 'npm run merge-reports'
-                        bat 'npm run generate-report'
+                        bat 'npm run build-report'
                     }
                 }
                 // Archive the Mochawesome report
