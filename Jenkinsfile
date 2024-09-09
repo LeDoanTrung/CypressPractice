@@ -9,9 +9,13 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
+                    // Cài đặt Node.js và thiết lập đường dẫn
                     def nodeHome = tool name: 'NodeJS', type: 'NodeJSInstallation'
                     env.PATH = "${nodeHome}\\bin;${env.PATH}" // Đường dẫn đúng cho Windows
                 }
+                // Kiểm tra Node.js và npm đã được cài đặt chưa
+                bat 'node -v' // In ra phiên bản Node.js để kiểm tra
+                bat 'npm -v'  // In ra phiên bản npm để kiểm tra
                 // Cài đặt các gói npm cho Windows
                 bat 'npm install'
             }
