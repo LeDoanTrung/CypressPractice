@@ -7,7 +7,6 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/LeDoanTrung/CypressPractice'
-                bat 'if exist node_modules rd /s /q node_modules'
                 bat 'npm install'
             }
         }
@@ -17,7 +16,6 @@ pipeline {
                     // Enable ANSI color in the console output
                     ansiColor('xterm') {
                         bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome"'
-                        bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results"'
                         
                         
                         // Check version
@@ -28,9 +26,7 @@ pipeline {
                         bat 'type cypress.config.js'
                         bat 'type package.json' 
 
-                        bat 'npm run test:mocha-reporter'
-                        bat 'npm run merge-reports'
-                        bat 'npm run build-report'
+                        bat 'npm run test'
                     }
                 }
                 // Archive the Mochawesome report
