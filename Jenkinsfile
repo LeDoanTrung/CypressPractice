@@ -16,7 +16,7 @@ pipeline {
                 script {
                     // Enable ANSI color in the console output
                     ansiColor('xterm') {
-                        bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome-report" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome-report"'
+                        bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome"'
                         bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results"'
                         
                         
