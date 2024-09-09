@@ -9,7 +9,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here   
     },
-    specPattern: "./cypress/tests/*/*",
+    specPattern: "./cypress/tests/API/*",
     baseUrl: "https://www.demoblaze.com/",
     
   },
