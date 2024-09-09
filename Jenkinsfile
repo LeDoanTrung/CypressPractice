@@ -16,8 +16,9 @@ pipeline {
                 script {
                     // Enable ANSI color in the console output
                     ansiColor('xterm') {
-                        bat 'if exist mochawesome-report rd /s /q mochawesome-report'
-                        bat 'if exist results rd /s /q results'
+                        bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome-report" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\mochawesome-report"'
+                        bat 'if exist "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results" rd /s /q "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Cypress Pro\\results"'
+                        
                         
                         // Check version
                         bat 'node -v'
