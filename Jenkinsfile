@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Đặt biến môi trường nếu cần
         CYPRESS_API_URL = 'https://jsonplaceholder.typicode.com/posts'
     }
 
@@ -10,19 +9,18 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Cài đặt Node.js và npm
                     def nodeHome = tool name: 'NodeJS', type: 'NodeJSInstallation'
-                    env.PATH = "${nodeHome}/bin:${env.PATH}"
+                    env.PATH = "${nodeHome}\\bin;${env.PATH}" // Đường dẫn đúng cho Windows
                 }
-                // Cài đặt các gói npm
-                sh 'npm install'
+                // Cài đặt các gói npm cho Windows
+                bat 'npm install'
             }
         }
 
         stage('Run Cypress Tests') {
             steps {
-                // Chạy các bài kiểm tra Cypress
-                sh 'npm run test'
+                // Chạy các bài kiểm tra Cypress trên Windows
+                bat 'npm run test'
             }
         }
     }
@@ -33,11 +31,9 @@ pipeline {
             archiveArtifacts artifacts: 'cypress/screenshots/**/*, cypress/videos/**/*'
         }
         success {
-            // Thông báo khi kiểm tra thành công
             echo 'Tests passed!'
         }
         failure {
-            // Thông báo khi kiểm tra thất bại
             echo 'Tests failed!'
         }
     }
