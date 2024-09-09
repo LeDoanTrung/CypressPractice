@@ -12,7 +12,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm test'
+                bat 'npm run test:mocha-reporter'
+                bat 'npm run merge-reports'
+                bat 'npm run build-report'
             }
         }
     }
