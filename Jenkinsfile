@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Cài đặt Node.js và thiết lập đường dẫn
-                    def nodeHome = tool name: 'NodeJS', type: 'NodeJSInstallation'
+                    def nodeHome = tool name: 'NodeJS 20', type: 'NodeJSInstallation'
                     env.PATH = "${nodeHome}\\bin;${env.PATH}" // Đường dẫn đúng cho Windows
                 }
                 // Kiểm tra Node.js và npm đã được cài đặt chưa
