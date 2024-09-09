@@ -19,6 +19,14 @@ pipeline {
                         bat 'if exist mochawesome-report rd /s /q mochawesome-report'
                         bat 'if exist results rd /s /q results'
                         
+                        // Check version
+                        bat 'node -v'
+                        bat 'npm -v'
+                        bat 'echo %PATH%'
+                        bat 'echo %NODE_PATH%'
+                        bat 'type cypress.json'
+                        bat 'type package.json' 
+
                         bat 'npm run test:mocha-reporter'
                         bat 'npm run merge-reports'
                         bat 'npm run build-report'
